@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+
+<h3>Tag: {{page.tag}}</h3>
+
+{% for page in page.pages %}
+    <p>
+    <a href="{{page.dir}}">{{page.title}}</a> - {{page.published | date: "%-m/%-d/%y at %I:%M" }}
+    </p>
+{% endfor %}

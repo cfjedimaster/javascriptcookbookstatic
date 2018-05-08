@@ -1,0 +1,43 @@
+---
+layout: default
+title: JavaScript Cookbook
+---
+
+<div class="row">
+
+  <div class="span10">
+    
+    <h2>Welcome</h2>
+
+    <p class="lead">
+    The JavaScript Cookbook is a site for common JavaScript problems and solutions. Anyone is 
+    welcome to <a href="/submit.html">contribute</a> an article. 
+    </p>    
+    
+    <h3>Updates</h3>
+    <p>
+		In March, 2015, I switched the site from a Node.js app to a static one using Jekyll. Because static sites are cool.
+    </p>
+    
+    <h3>Latest Articles</h3>
+
+{% assign sorted = (site.pages | where:"layout","article" | sort: 'published' | reverse) %}
+
+{% for page in sorted limit:5 %}
+    <p>
+    <a href="{{page.dir}}">{{page.title}}</a> - {{page.published | date: "%-m/%-d/%y at %I:%M" }}
+    </p>
+{% endfor %}
+
+
+        
+  </div>
+  
+  <div class="span2">
+    <ul class="nav nav-list well">
+      <li class="nav-header">Tags</li>
+      {% taglist %}
+    </ul>   
+  </div>
+  
+</div>
