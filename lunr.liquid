@@ -1,0 +1,13 @@
+---
+permalink: /index.json
+---
+
+[
+{% for article in collections.articles %}
+{
+	"title":"{{article.data.title}}",
+	"url":"{{article.url}}",
+	"content":{% excerpt article %}
+} {% if forloop.last == false %},{% endif %}
+{% endfor %} 
+]

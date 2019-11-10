@@ -1,0 +1,37 @@
+---
+layout: default
+title: JavaScript Cookbook
+---
+
+<div class="row">
+  <div class="col-10">
+      <h2>Welcome</h2>
+
+      <p class="lead">
+      The JavaScript Cookbook is a site for common JavaScript problems and solutions. Anyone is 
+      welcome to <a href="/submit">contribute</a> an article. 
+      </p>    
+      
+      <h3>Updates</h3>
+      <p>
+      It's been four years since the last update. The site is now built using <a href="https://11ty.io">11ty</a>, search is local, 
+      and I'm using PRs for submissions.
+      </p>
+      
+      <h3>Latest Articles</h3>
+
+    {% for article in collections.articles limit:5 %}
+      <a href="{{article.url}}">{{ article.data.title }}</a> - {% dateFormat article.data.published %}<br/>
+    {% endfor %}
+
+  </div>
+  <div class="col-2">
+    <ul class="nav flex-column bg-light">
+      <li class="nav-link">Tags</li>
+    {% for tag in collections.tagList %}
+    <li class="nav-link"><a href="/tag/{{tag | cgi_escape}}">{{ tag }}</a></li>
+    {% endfor %}
+    </ul>   
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+---
+layout: default
+title: Search
+---
+
+<div id="app">
+
+	<div class="row">
+		<div class="col">
+			<h3>Search Results</h3>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<input v-model="term" class="form-control">
+		</div>
+		<div class="col">
+			<button class="btn btn-primary" type="button" @click="search" :disabled="!searchEnabled">Search</button>
+		</div>
+	</div>
+
+	<div v-if="results" class="row">
+
+		<div class="col">
+			<p>
+			<ul>
+				<li v-for="result in results">
+					<a :href="result.url"> {% raw %}{{ result.title }}{% endraw %}</a>
+				</li>
+			</ul>
+			</p>
+			
+			<p v-if="noResults">
+				Sorry, no results were found.
+			</p>
+		</div>
+	</div>
+</div>
