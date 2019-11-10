@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Get the current URL via JavaScript
-published: 2013-08-15T01:45:07.604Z
+published: 2013-08-15
 author: 
 sourceurl: 
 tags: [misc]

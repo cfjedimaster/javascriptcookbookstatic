@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Generate an epoch.
-published: 2013-06-28T00:56:55.385Z
+published: 2013-06-28
 author: Don Burks
 sourceurl: 
 tags: [date]

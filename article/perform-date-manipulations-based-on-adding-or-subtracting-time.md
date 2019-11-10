@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Perform date manipulations based on adding or subtracting time
-published: 2013-07-25T21:22:25.845Z
+published: 2013-07-25
 author: 
 sourceurl: 
 tags: [date]

@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Traversing DOM (sub)trees with a recursive "walk the DOM" function.
-published: 2013-06-26T13:49:59.167Z
+published: 2013-06-26
 author: Douglas Crockford
 sourceurl: http://www.youtube.com/watch?v=Y2Y0U-2qJMs&feature=youtu.be&t=27m15s
 tags: [dom]
