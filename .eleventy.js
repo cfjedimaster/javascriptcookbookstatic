@@ -6,6 +6,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("css");
 	eleventyConfig.addPassthroughCopy("js");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
+	eleventyConfig.addPassthroughCopy("_redirects");
 
 	eleventyConfig.addCollection("articles", function(collection) {
 		return collection.getFilteredByGlob("**/article/*.md").sort((a, b) => {
