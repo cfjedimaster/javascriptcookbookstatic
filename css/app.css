@@ -7,6 +7,17 @@ div.container {
 	margin-top:20px;
 }
 
+.break-long-text {
+	overflow-x: hidden;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word; /* Non standard for WebKit */
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+
 @media screen and (max-width: 575px) {
 	.indexTags {
 		flex-direction: row !important;
