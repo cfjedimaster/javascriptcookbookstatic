@@ -6,24 +6,24 @@ layout: default
 
 {{ content }}
 
-<p>
-<b>Published:</b> {% dateFormat published %}<br/>
-{% if author %}
-<b>Author:</b> {{ author }}<br/>
-{% endif %}
-{% if moreinfo %}
-<b>More Information:</b> <a href="{{moreinfo}}">{{moreinfo}}</a><br/>
-{% endif %}
-{% if sourceurl %}
-<b>Source:</b> <a href="{{sourceurl}}">{{sourceurl}}</a><br/>
-{% endif %}
-{% if tags %}
-<b>Tags:</b>
-	{% for tag in tags %}
-	<a href="/tag/{{tag | cgi_escape}}"><span class="label label-info">{{tag}}</span></a>
-	{% endfor %}
-{% endif %}
-</p>
+<div class="mb-5 p-2 break-long-text">
+    <b>Published:</b> {% dateFormat published %}<br/>
+    {% if author %}
+    <b>Author:</b> {{ author }}<br/>
+    {% endif %}
+    {% if moreinfo %}
+    <b>More Information:</b> <a href="{{moreinfo}}">{{moreinfo}}</a><br/>
+    {% endif %}
+    {% if sourceurl %}
+    <b>Source:</b> <a href="{{sourceurl}}">{{sourceurl}}</a><br/>
+    {% endif %}
+    {% if tags %}
+    <b>Tags:</b>
+        {% for tag in tags %}
+        <a href="/tag/{{tag | cgi_escape}}"><span class="label label-info">{{tag}}</span></a>
+        {% endfor %}
+    {% endif %}
+</div>
 
 <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -31,7 +31,7 @@ layout: default
         var disqus_shortname = 'javascriptcookbook'; // required: replace example with your forum shortname
 		var disqus_url = 'http://www.javascriptcookbook.com/article/{{sesURL}}';
 		var disqus_identifer = '{{id}}';
-		
+
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -41,4 +41,3 @@ layout: default
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    
