@@ -5,7 +5,7 @@ permalink: /index.json
 [
 {% for article in collections.articles %}
 {
-	"title":"{{article.data.title}}",
+	"title":"{{article.data.title | my_jsonify}}",
 	"url":"{{article.url}}",
 	"content":{% excerpt article %}
 } {% if forloop.last == false %},{% endif %}

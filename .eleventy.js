@@ -7,7 +7,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("js");
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("_redirects");
-
+	
 	eleventyConfig.addCollection("articles", function(collection) {
 		return collection.getFilteredByGlob("**/article/*.md").sort((a, b) => {
 			let aDate = new Date(a.data.published);
@@ -16,6 +16,26 @@ module.exports = function(eleventyConfig) {
 			if (aDate.getTime() > bDate.getTime()) return -1;
 			return 0;
 		});
+	});
+
+  let titleArticleCache = {};
+  eleventyConfig.addFilter('toData', (p, articles) => {
+    if(titleArticleCache[p]) return titleArticleCache[p];
+    for(let i=0;i<articles.length;i++) {
+      if(articles[i].url == p) {
+        titleArticleCache[p] = { title: articles[i].data.title, published: articles[i].data.published};
+        return titleArticleCache[p];
+      }
+    }
+    // cache that we couldn't match
+    titleArticleCache[p] = { title: ''};
+    return titleArticleCache[p];
+  });
+
+	eleventyConfig.addFilter('my_jsonify', s => {
+		return s.replace(/&/g, '&amp;')
+		.replace(/"/g, '&quot;')
+		.replace(/'/g, '&apos;');
 	});
 
 	eleventyConfig.addShortcode('dateFormat', function(d) {

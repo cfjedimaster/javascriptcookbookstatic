@@ -10,9 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0"
+    "@11ty/eleventy": "^0.11.0"
   },
   "dependencies": {
-    "@11ty/eleventy-plugin-rss": "^1.0.7"
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "dotenv": "^8.2.0",
+    "googleapis": "^51.0.0",
+    "liquidjs": "^9.12.0"
   }
 }

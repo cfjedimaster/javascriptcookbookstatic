@@ -24,6 +24,13 @@ title: JavaScript Cookbook
       <a href="{{article.url}}">{{ article.data.title }}</a> - {% dateFormat article.data.published %}<br/>
     {% endfor %}
 
+      <h3>Popular Articles</h3>
+
+      {% for article in popularpages limit:5 %}
+      		{% assign articleData = article.path | toData: collections.articles %}
+          <a href="{{article.path}}">{{articleData.title}}</a> - {% dateFormat articleData.published %}<br/>
+      {% endfor %}
+
   </article>
   <aside class="col-sm-4 col-md-3 col-lg-2">
     <ul class="indexTags nav flex-column bg-light">
