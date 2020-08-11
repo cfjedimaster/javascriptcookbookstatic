@@ -40,6 +40,7 @@ module.exports = function(eleventyConfig) {
 
 	eleventyConfig.addShortcode('dateFormat', function(d) {
 		if(!Intl) return d;
+		if(!d) return '';
 		return new Intl.DateTimeFormat('en-US').format(new Date(d));	
 	});
 

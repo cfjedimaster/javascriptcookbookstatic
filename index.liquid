@@ -28,7 +28,9 @@ title: JavaScript Cookbook
 
       {% for article in popularpages limit:5 %}
       		{% assign articleData = article.path | toData: collections.articles %}
+          {% if articleData.title != "" %}
           <a href="{{article.path}}">{{articleData.title}}</a> - {% dateFormat articleData.published %}<br/>
+          {% endif %}
       {% endfor %}
 
   </article>
